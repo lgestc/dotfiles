@@ -1,19 +1,24 @@
-{% for tag in workspace.tags %}
+{% assign colorActiveFg = "{{.colors.focus_fg}}" %}
+{% assign colorActiveBg = "{{.colors.focus_bg}}" %}
+{% assign colorForeground = "{{.colors.bg}}" %}
+{% assign colorHasWindows = "{{.colors.focus_fg}}" %}
+
+{{`{% for tag in workspace.tags %}
 {% if tag.mine %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#000}%{B#fff} {{tag.name}} %{B-}%{F-}
+%{F{{colorForeground}}}%{B{{colorActiveBg}}} {{tag.name}} %{B-}%{F-}
 %{A}
 {% elsif tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#000000}%{B#ffffff} {{tag.name}} %{B-}%{F-}
+%{F{{colorForeground}}}%{B{{colorActiveBg}}} {{tag.name}} %{B-}%{F-}
 %{A}
 {% elsif tag.busy %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#61afef} {{tag.name}} %{F-}
+%{F{{colorHasWindows}}} {{tag.name}} %{F-}
 %{A}
 {% else tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#FFFFFF} {{tag.name}} %{F-}
+%{F{{colorActiveBg}}} {{tag.name}} %{F-}
 %{A}
 {% endif %}
 {% endfor %}
@@ -28,5 +33,4 @@
 {% else %}
 ??
 {% endif %}
-%{F-}
-
+%{F-}`}}
