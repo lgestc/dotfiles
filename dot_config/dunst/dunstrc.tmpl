@@ -168,16 +168,16 @@
 
 
 [urgency_low]
-    background = "#1e2127"
-    foreground = "#abb2bf"
+    background = "{{ .colors.blue }}"
+    foreground = "{{ .colors.white }}"
     timeout = 3
 
 [urgency_normal]
-    background = "#1e2127"
-    foreground = "#abb2bf"
+    background = "{{ .colors.black }}"
+    foreground = "{{ .colors.white }}"
     timeout = 3
 
 [urgency_critical]
-    background = "#bd2c40"
-    foreground = "#dfdfdf"
+    background = "{{ .colors.red }}"
+    foreground = "{{ .colors.white }}"
     timeout = 0
