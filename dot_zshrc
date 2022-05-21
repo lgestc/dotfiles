@@ -1,0 +1,25 @@
+# Setup SSH
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
+export DO_PAT=1a9bf602f7cd3ff0ffc8068ba900f3d21d39efd30e6406993ce72c4bbd5d9230
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/luke/.oh-my-zsh"
+
+# CONFIG
+
+export TERMINAL=alacritty
+export EDITOR=nvim
+
+source $HOME/.config/zsh-preferences.sh
+
+

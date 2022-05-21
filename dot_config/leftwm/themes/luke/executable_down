@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+killall polybar
+killall picom
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+leftwm-command "UnloadTheme"
+
+if [ -x "$(command -v tabdump)" ]; then
+  killall tabdump
+fi
+
+

@@ -1,0 +1,8 @@
+configuration {
+ modi: "window,drun,combi,power:~/.config/rofi/rofi-power-menu.sh";
+ combi-modi: "window,drun,power";
+ show-icons: true;
+}
+
+@theme "./theme.rasi"
+

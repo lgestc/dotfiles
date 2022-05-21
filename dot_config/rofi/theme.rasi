@@ -1,0 +1,92 @@
+/*
+ * ROFI One Dark
+ *
+ * Based on OneDark.vim (https://github.com/joshdick/onedark.vim)
+ *
+ * Author: Benjamin Stauss
+ * User: me-benni
+ * Edit: hatoba29
+ *
+ */
+
+
+* {
+  black:      #000000;
+  red:        #eb6e67;
+  green:      #95ee8f;
+  yellow:     #f8c456;
+  blue:       #6eaafb;
+  magenta:    #d886f3;
+  cyan:       #6cdcf7;
+  emphasis:   #ffffff;
+  text:       #dfdfdf;
+  text-alt:   #b2b2b2;
+  fg:         #abb2bf;
+  bg:         #282c34;
+
+  spacing: 0;
+  background-color: transparent;
+
+  text-color: @text;
+}
+
+window {
+  transparency: "screenshot";
+	location: center;
+	background-color: #1e2127;
+	width: 40%;
+}
+
+mainbox {
+  children: [inputbar, message, listview];
+}
+
+inputbar {
+  padding: 8px 8px;
+  children: [entry, case-indicator];
+}
+
+prompt {
+  text-color: @blue;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 0px;
+}
+
+listview {
+	padding: 5px 5px;
+  spacing: 5px;
+	fixed-height: false;
+	scrollbar: false;
+	lines: 5;
+}
+
+element {
+  padding: 5px;
+  text-color: @text;
+  highlight: bold #95ee8f; /* green */
+  border-radius: 0px;
+}
+
+element selected {
+  background-color: @emphasis;
+  text-color: @black;
+}
+
+element-text {
+ background-color: inherit;
+ text-color: inherit;
+}
+
+element-icon {
+  margin: 0 15px 0 0;
+}
+
+/* vim:ft=css
