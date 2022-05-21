@@ -1,0 +1,62 @@
+* {
+  text:       {{.colors.fg}};
+  fg:         {{.colors.fg}};
+  bg:         {{.colors.bg}};
+  focus:         {{.colors.fg}};
+
+  /* do not touch */
+  background-color: transparent;
+  spacing: 0;
+}
+window {
+  transparency: "screenshot";
+	location: center;
+	background-color: @bg;
+	width: 40%;
+}
+
+mainbox {
+  children: [inputbar, message, listview];
+}
+
+inputbar {
+  padding: 8px 8px;
+  children: [entry, case-indicator];
+}
+
+/* input text */
+entry {
+  margin: 0px 0px;
+  text-color: @focus;
+}
+
+listview {
+	padding: 5px 5px;
+  spacing: 5px;
+	fixed-height: false;
+	scrollbar: false;
+	lines: 5;
+}
+
+element {
+  padding: 5px;
+  text-color: @text;
+  highlight: bold #95ee8f; /* green */
+  border-radius: 0px;
+}
+
+element selected {
+  background-color: @focus;
+  text-color: @bg;
+}
+
+element-text {
+ background-color: inherit;
+ text-color: inherit;
+}
+
+element-icon {
+  margin: 0 15px 0 0;
+}
+
+/* vim:ft=css

@@ -8,11 +8,9 @@
 # cyan = "#56b6c2"
 # white = "#fff"
 
-# focus_fg = "#61afef"
 focus_fg = "#fff"
 focus_bg = "#fff"
 bg = "#1e2127"
-# bg = "#000"
 fg = "#fff"
 alert = "#e06c75"
 info = "#61afef"
