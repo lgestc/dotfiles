@@ -1,4 +1,6 @@
-font = "JetBrainsMono Nerd Font Mono"
+[font]
+regular = "JetBrainsMono Nerd Font Mono"
+bold = "JetBrainsMonoExtraBold Nerd Font"
 
 [colors]
 # black = "#1e2127"
