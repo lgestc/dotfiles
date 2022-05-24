@@ -67,13 +67,3 @@ if [ -x "$(command -v feh)" ]; then
 fi
 
 polybar -c $SCRIPTPATH/polybar.config main &> /dev/null &
-
-#server for syncing teams notifications
-if [ -x "$(command -v tabdump)" ]; then
-  cd ~/projects/tabdump/server && tabdump &> /dev/null &
-fi
-
-if [ -f ~/scripts/updates ]; then
-  ~/scripts/updates &
-fi
-

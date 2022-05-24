@@ -2,7 +2,7 @@
 # source $HOME/.config/aliases.sh
 
 alias cdp='cd ~/projects'
-alias cdpf='cd ~/projects/frontend'
+alias cdpk='cd ~/projects/elastic/kibana'
 alias cdc='cd ~/.config'
 alias nvimconf='cdc && cd ./nvim && nvim init.lua'
 
