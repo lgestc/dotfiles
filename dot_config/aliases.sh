@@ -14,4 +14,4 @@ alias cal="cal -m -3"
 
 alias nnn="nnn -dex"
 
-alias weather="curl wttr.in"
+alias wttr="curl wttr.in"
