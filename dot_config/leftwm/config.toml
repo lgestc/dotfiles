@@ -13,8 +13,10 @@ insert_behavior= "Top"
 [[scratchpad]]
 name = "nvim" 
 value = "alacritty -e nvim"
-height = 480
-width = 640
+x = 0.4
+y = 0.4
+height = 0.2
+width =  0.2
 
 window_rules = [
   {window_title = "teams.microsoft.com is sharing your screen.", spawn_on_tag = 9},

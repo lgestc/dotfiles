@@ -13,3 +13,5 @@ alias vi="nvim"
 alias cal="cal -m -3"
 
 alias nnn="nnn -dex"
+
+alias weather="curl wttr.in"
