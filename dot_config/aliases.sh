@@ -1,17 +1,27 @@
-# Append this to .zshrc to source aliases
+# Append this to .zshrc to source aliases:
 # source $HOME/.config/aliases.sh
 
+# go to config directory
+alias cdc='cd ~/.config'
+
+# open vim config
+alias nvimconf='cdc && cd ./nvim && nvim init.lua'
+
+# directory shortcuts
 alias cdp='cd ~/projects'
 alias cdpk='cd ~/projects/elastic/kibana'
-alias cdc='cd ~/.config'
-alias nvimconf='cdc && cd ./nvim && nvim init.lua'
+
+# devservers
+alias kibanadev='concurrently -n "kibana,search" "yarn start --run-examples" "yarn es snapshot"'
+alias kbd='kibanadev'
 
 # show all git changes (staged and not)
 alias gdh="git diff HEAD"
+
+# general programs
 alias vim="nvim"
 alias vi="nvim"
 alias cal="cal -m -3"
-
 alias nnn="nnn -dex"
-
 alias wttr="curl wttr.in"
+

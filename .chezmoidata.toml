@@ -17,7 +17,7 @@ focus_bg = "#fff"
 bg = "#1e2127"
 fg = "#fff"
 alert = "#e06c75"
-info = "#61afef"
+accent = "#56b6c2"
 
 [wm]
 border_width = 1

@@ -50,6 +50,7 @@ modifier = []
 
 [[keybind]]
 command = "Execute"
+# value = "/home/luke/.cargo/bin/savr"
 value = "slock"
 modifier = ["modkey"]
 key = "l"
