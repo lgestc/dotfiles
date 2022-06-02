@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+internal="eDP-1"
+externals=("DP-1" "DP-2" "HDMI-1" "HDMI-2")
+
+function connected_external() {
+  externals=("DP-1" "DP-2" "HDMI-1" "HDMI-2")
+  connectedExternal=""
+
+  for external in "${externals[@]}"
+  do
+    # echo "Testing external display $external"
+    connected=$(xrandr | grep -e "^$external\sconnected" | wc -l)
+    if [[ $connected -gt 0 ]] 
+    then
+      connectedExternal=$external
+    fi
+  done
+
+  echo $connectedExternal
+}
+
+function switch_displays() {
+  connectedExternal=$(connected_external)
+
+  disableExternals=" --output $internal --auto "
+
+  for external in "${externals[@]}"
+  do
+    disableExternals+=" --output $external --off"
+  done
+
+  if [[ $connectedExternal ]]
+  then
+    echo "Enabling external screen $connectedExternal"
+    notify-send "Enabling external screen $connectedExternal"
+    bash -c "xrandr --output $connectedExternal --auto --output $internal --off"
+  else
+    echo "Enabling internal screen"
+    notify-send "Enabling internal screen"
+    bash -c "xrandr $disableExternals"
+  fi
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -f /var/lib/pacman/db.lck ]; then
+    dunstify -u critical "Could not check updates"
+else
+  updates=$(sudo paru -Sy | paru -Qu | wc -l)
+  if [[ $updates -gt 0 ]]; then
+    dunstify -u low -t 10000 "  Updates available ($updates)"
+  fi
+fi

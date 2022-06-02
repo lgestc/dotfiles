@@ -12,7 +12,7 @@ alias cdp='cd ~/projects'
 alias cdpk='cd ~/projects/elastic/kibana'
 
 # devservers
-alias kibanadev='concurrently -n "kibana,search" "yarn start --run-examples" "yarn es snapshot"'
+alias kibanadev='cdpk && concurrently -n "kibana,search" "yarn start" "yarn es snapshot -E path.data=/home/luke/projects/elastic/esdata"'
 alias kbd='kibanadev'
 
 # show all git changes (staged and not)

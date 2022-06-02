@@ -1,0 +1,14 @@
+#!/bin/sh
+
+source ~/.config/scripts/displays
+
+connectedExternal=$(connected_external)
+
+if [[ $connectedExternal ]]
+then
+  WINIT_X11_SCALE_FACTOR=1 alacritty
+else
+  WINIT_X11_SCALE_FACTOR=1.2 alacritty
+fi
+
+
