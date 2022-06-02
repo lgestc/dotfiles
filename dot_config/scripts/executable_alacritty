@@ -1,14 +1,26 @@
 #!/bin/sh
 
-source ~/.config/scripts/displays
-
-connectedExternal=$(connected_external)
-
-if [[ $connectedExternal ]]
-then
-  WINIT_X11_SCALE_FACTOR=1 alacritty
+cache_file=/tmp/external_display
+if [ -f "$cache_file" ]; then
+  echo "read connected display from $cache_file"
+  external=$(cat $cache_file)
 else
-  WINIT_X11_SCALE_FACTOR=1.2 alacritty
+  source ~/.config/scripts/displays
+  external=$(connected_external)
+  echo "$external" > $cache_file
 fi
 
+external=`echo $external | sed 's/ *$//g'`
+
+scale=1
+if [[ $external ]]
+then
+  scale=1 
+else
+  scale=1.2 
+fi
+
+echo "winit scale set to $scale"
+
+WINIT_X11_SCALE_FACTOR=$scale alacritty
 

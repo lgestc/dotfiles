@@ -70,7 +70,7 @@ key = "d"
 
 [[keybind]]
 command = "Execute"
-value = "alacritty"
+value = "~/.config/scripts/alacritty"
 modifier = ["modkey"]
 key = "Return"
 
