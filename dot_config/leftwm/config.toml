@@ -12,10 +12,10 @@ insert_behavior= "Top"
 
 [[scratchpad]]
 name = "nvim" 
-value = "alacritty -e nvim"
+value = "zsh -c 'alacritty -e nvim ~/docs/notes.txt'"
 x = 0.4
-y = 0.4
-height = 0.2
+y = 0.3
+height = 0.3
 width =  0.2
 
 window_rules = [

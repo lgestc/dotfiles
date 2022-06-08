@@ -6,8 +6,6 @@ require("lsp_signature").setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 local lsp = vim.lsp
 local handlers = lsp.handlers
 
@@ -19,10 +17,11 @@ handlers["textDocument/hover"] = lsp.with(handlers.hover, pop_opts)
 handlers["textDocument/signatureHelp"] = lsp.with(handlers.signature_help, pop_opts)
 
 -- Autoformat
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd({"BufWritePre"}, {
+		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			group = augroup,
 			buffer = bufnr,
 			callback = function()
@@ -54,68 +53,23 @@ nvim_lsp.rust_analyzer.setup({
 local null_ls = require("null-ls")
 local b = null_ls.builtins
 
+-- to update or install dependencies:
 -- npm install -g @fsouza/prettierd stylelint postcss postcss-scss typescript-language-server typescript vscode-langservers-extracted eslint_d
 
+local style_sources = require('lsp/css')
+
 null_ls.setup({
-	sources = {
+	sources = vim.tbl_extend("force", {
 		b.code_actions.gitsigns,
 		b.formatting.terraform_fmt,
-		b.formatting.stylelint.with({
-			condition = function(utils)
-				return utils.root_has_file(".stylelintrc.json")
-			end,
-			extra_args = { "--custom-syntax=postcss-scss" },
-		}),
-		b.formatting.prettierd.with({
-			condition = function(utils)
-				return utils.root_has_file(".stylelintrc.json")
-			end,
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"svelte",
-				"html",
-				"json",
-				"yaml",
-				"markdown",
-				"graphql",
-			},
-		}),
-
-		b.formatting.prettierd.with({
-			condition = function(utils)
-				return false == utils.root_has_file(".stylelintrc.json")
-			end,
-			filetypes = {
-				"css",
-				"scss",
-				"less",
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"svelte",
-				"html",
-				"json",
-				"yaml",
-				"markdown",
-				"graphql",
-			},
-		}),
-
 		b.formatting.stylua,
 		b.code_actions.eslint_d,
-		b.diagnostics.eslint_d,
-		b.diagnostics.stylelint.with({
-			condition = function(utils)
-				return utils.root_has_file(".stylelintrc.json")
-			end,
-			extra_args = { "--custom-syntax=postcss-scss" },
+		b.diagnostics.eslint_d.with({
+			extra_args = {
+				"--rule",
+				"import/no-extraneous-dependencies: warn",
+			},
 		}),
-	},
+	}, style_sources),
 	on_attach = on_attach,
 })

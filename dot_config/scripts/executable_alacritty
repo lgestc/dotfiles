@@ -2,7 +2,7 @@
 
 cache_file=/tmp/external_display
 if [ -f "$cache_file" ]; then
-  echo "read connected display from $cache_file"
+  # echo "read connected display from $cache_file"
   external=$(cat $cache_file)
 else
   source ~/.config/scripts/displays
@@ -13,6 +13,7 @@ fi
 external=`echo $external | sed 's/ *$//g'`
 
 scale=1
+
 if [[ $external ]]
 then
   scale=1 
