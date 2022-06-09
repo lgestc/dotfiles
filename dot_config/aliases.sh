@@ -23,8 +23,7 @@ alias gdh="git diff HEAD"
 alias vim="nvim"
 alias vi="nvim"
 alias cal="cal -m -3"
-alias nnn="nnn -dex"
 alias wttr="curl wttr.in"
 
 alias alacritty="~/.config/scripts/alacritty"
-
+alias ls='nnn -de'
