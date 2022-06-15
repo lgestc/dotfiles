@@ -35,7 +35,7 @@ return {
 	}),
 	b.formatting.prettierd.with({
 		condition = no_stylelint,
-		filetypes = vim.tbl_extend("force", {
+		filetypes = vim.list_extend({
 			"css",
 			"scss",
 			"less",

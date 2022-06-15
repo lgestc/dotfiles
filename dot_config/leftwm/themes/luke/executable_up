@@ -15,7 +15,7 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 setxkbmap -option caps:escape
 
 #kb speed
-xset r rate 200 40
+xset r rate 250 40
 
 # Setup video outputs
 switch_displays

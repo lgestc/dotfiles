@@ -28,4 +28,3 @@ alias cal="cal -m -3"
 alias wttr="curl wttr.in"
 
 alias alacritty="~/.config/scripts/alacritty"
-alias ls='n'

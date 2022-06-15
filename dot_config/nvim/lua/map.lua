@@ -11,7 +11,7 @@ map("n", "S", "<cmd>:w<cr>", options)
 
 map("n", "<Leader>p", "<cmd>Telescope find_files<cr>", options)
 map("n", "<Leader>b", "<cmd>Telescope buffers<cr>", options)
-map("n", "<Leader>f", [[<cmd>lua require("telescope").extensions.live_grep_raw.live_grep_raw()<cr>]], options)
+map("n", "<Leader>f", [[<cmd>lua require("telescope").extensions.live_grep_args.live_grep_raw()<cr>]], options)
 -- Show recent yanks
 map("n", "<Leader>gc", [[<cmd>Telescope neoclip<cr>]], options)
 -- Show git status
@@ -69,4 +69,4 @@ end, {
 })
 
 -- file tree
-map("n", "<Leader>e", "<cmd>NeoTreeFloatToggle<cr>", options)
+map("n", "<Leader>e", "<cmd>NnnPicker<cr>", options)

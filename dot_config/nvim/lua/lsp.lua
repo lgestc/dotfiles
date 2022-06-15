@@ -59,7 +59,7 @@ local b = null_ls.builtins
 local style_sources = require('lsp/css')
 
 null_ls.setup({
-	sources = vim.tbl_extend("force", {
+	sources = vim.list_extend({
 		b.code_actions.gitsigns,
 		b.formatting.terraform_fmt,
 		b.formatting.stylua,
