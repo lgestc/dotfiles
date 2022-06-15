@@ -27,4 +27,7 @@ alias vi="nvim"
 alias cal="cal -m -3"
 alias wttr="curl wttr.in"
 
+alias ls="n"
+alias nnn="n"
+
 alias alacritty="~/.config/scripts/alacritty"
