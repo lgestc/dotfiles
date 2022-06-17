@@ -29,3 +29,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 	desc = "Highlight yanked text",
 })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = "plugins.lua",
+	callback = function()
+		vim.cmd([[so <afile> | :PackerCompile]])
+	end,
+	desc = "Packer user config",
+})
