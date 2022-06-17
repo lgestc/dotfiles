@@ -2,6 +2,7 @@
 background = {{ .colors.bg }}
 alert = {{ .colors.alert }}
 foreground = {{ .colors.fg }}
+spotify = #1DB954
 
 [bar/main]
 width = 100%
@@ -13,17 +14,16 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 padding-left = 0
-padding-right = 4
+padding-right = 3
 
-module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 4
 
 font-0 = "mono;pixelsize=7;2"
 font-1 = "{{.font.bold}}:style=Bold;pixelsize=7;2"
 
 modules-left = workspace0
-modules-center = date 
-modules-right = pulseaudio wlan wlan2 battery 
+modules-center = 
+modules-right = pulseaudio wlan battery date
 
 tray-position = 
 tray-padding = 1
@@ -35,22 +35,6 @@ type = custom/script
 exec = leftwm-state -w 0 -t $SCRIPTPATH/template.liquid
 tail = true
 label-font = 2
-
-[module/wlan2]
-type = internal/network
-interface = wlo1
-interval = 3.0
-
-format-connected = <ramp-signal>
-label-connected = 
-
-label-disconnected = 睊 
-format-disconnected = <label-disconnected>
-label-disconnected-foreground = ${colors.alert}
-
-ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground}
-
 
 [module/wlan]
 type = internal/network
@@ -78,8 +62,6 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground}
-format-foreground = ${colors.foreground}
 
 label = %date% %time%
 label-font = 2
@@ -89,10 +71,8 @@ type = internal/pulseaudio
 
 format-volume = <label-volume>
 format-volume-prefix =  
-format-volume-prefix-foreground = ${colors.foreground}
 
 label-volume =" %percentage%%"
-label-volume-foreground = ${colors.foreground}
 label-volume-font = 2
 
 label-muted = ﱝ muted
@@ -109,19 +89,19 @@ label-charging-font = 2
 label-full-font = 2
 label-low-foreground = ${colors.alert}
 
-format-discharging = "<ramp-capacity>   <label-discharging>"
-format-charging = "<animation-charging>   <label-charging>"
+format-discharging = "<ramp-capacity> <label-discharging>"
+format-charging = "<animation-charging> <label-charging>"
 format-full = 
+
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-padding-right = 2
 
 animation-charging-0 = 
-animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [settings]
