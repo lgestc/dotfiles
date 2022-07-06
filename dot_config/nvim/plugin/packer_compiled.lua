@@ -117,7 +117,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nnn.nvim"] = {
-    config = { "\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\18replace_netrw\vpicker\nsetup\bnnn\frequire\0" },
+    config = { "\27LJ\2\né\1\0\0\a\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0004\4\4\0005\5\4\0009\6\5\0009\6\6\6>\6\2\5>\5\1\0045\5\a\0009\6\5\0009\6\b\6>\6\2\5>\5\2\0045\5\t\0009\6\5\0009\6\n\6>\6\2\5>\5\3\4=\4\v\3B\1\2\1K\0\1\0\rmappings\19open_in_vsplit\1\2\0\0\n<C-v>\18open_in_split\1\2\0\0\n<C-x>\16open_in_tab\fbuiltin\1\2\0\0\n<C-t>\1\0\1\18replace_netrw\vpicker\nsetup\bnnn\frequire\0" },
     loaded = true,
     path = "/home/luke/.local/share/nvim/site/pack/packer/start/nnn.nvim",
     url = "https://github.com/luukvbaal/nnn.nvim"
@@ -221,22 +221,22 @@ time([[Defining packer_plugins]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
 -- Config for: nnn.nvim
 time([[Config for nnn.nvim]], true)
-try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\18replace_netrw\vpicker\nsetup\bnnn\frequire\0", "config", "nnn.nvim")
+try_loadstring("\27LJ\2\né\1\0\0\a\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0004\4\4\0005\5\4\0009\6\5\0009\6\6\6>\6\2\5>\5\1\0045\5\a\0009\6\5\0009\6\b\6>\6\2\5>\5\2\0045\5\t\0009\6\5\0009\6\n\6>\6\2\5>\5\3\4=\4\v\3B\1\2\1K\0\1\0\rmappings\19open_in_vsplit\1\2\0\0\n<C-v>\18open_in_split\1\2\0\0\n<C-x>\16open_in_tab\fbuiltin\1\2\0\0\n<C-t>\1\0\1\18replace_netrw\vpicker\nsetup\bnnn\frequire\0", "config", "nnn.nvim")
 time([[Config for nnn.nvim]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
 time([[Config for nvim-neoclip.lua]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
-time([[Config for nvim-ts-autotag]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

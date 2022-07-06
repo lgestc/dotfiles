@@ -88,8 +88,14 @@ return require("packer").startup(function()
 	use({
 		"luukvbaal/nnn.nvim",
 		config = function()
-			require("nnn").setup({
+			local nnn = require("nnn")
+			nnn.setup({
 				replace_netrw = "picker",
+				mappings = {
+					{ "<C-t>", nnn.builtin.open_in_tab }, -- open file(s) in tab
+					{ "<C-x>", nnn.builtin.open_in_split }, -- open file(s) in split
+					{ "<C-v>", nnn.builtin.open_in_vsplit }, -- open file(s) in vertical split
+				},
 			})
 		end,
 	})

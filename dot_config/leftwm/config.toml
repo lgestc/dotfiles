@@ -12,11 +12,11 @@ insert_behavior= "Top"
 
 [[scratchpad]]
 name = "nvim" 
-value = "zsh -c 'alacritty -e nvim ~/docs/notes.txt'"
-x = 0.4
+value = "zsh -c 'alacritty -e nvim ~/docs/notes.md'"
+x = 0.25
 y = 0.3
 height = 0.3
-width =  0.2
+width =  0.5
 
 window_rules = [
   {window_title = "teams.microsoft.com is sharing your screen.", spawn_on_tag = 9},

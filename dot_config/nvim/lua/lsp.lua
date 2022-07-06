@@ -67,7 +67,7 @@ null_ls.setup({
 		b.diagnostics.eslint_d.with({
 			extra_args = {
 				"--rule",
-				"import/no-extraneous-dependencies: warn",
+				"import/no-extraneous-dependencies: off",
 			},
 		}),
 	}, style_sources),

@@ -13,8 +13,13 @@ alias cdpk='cd ~/projects/elastic/kibana'
 alias cdpt='cd ~/projects/elastic/kibana/x-pack/plugins/threat_intelligence'
 
 # devservers
-alias kibanadev='cdpk && concurrently -n "kibana,search" "yarn start" "yarn es snapshot --license trial -E path.data=/home/luke/projects/elastic/esdata"'
+alias kibanadev='cdpk && concurrently -n "kibana,search" "yarn start --no-base-path" "yarn es snapshot --license trial -E path.data=/home/luke/projects/elastic/esdata"'
 alias kbd='kibanadev'
+
+COVERAGE_OPTIONS="'[\"x-pack/plugins/threat_intelligence/public/**/*.ts*\"]'"
+
+# run threat intel plugin unit tests
+alias testti='cdpk && yarn test:jest x-pack/plugins/threat_intelligence --watchAll --coverage --collectCoverageFrom ${COVERAGE_OPTIONS}'
 
 # show all git changes (staged and not)
 alias gdh="git diff HEAD"
@@ -25,9 +30,8 @@ alias gsc="git diff --name-only --diff-filter=U --relative"
 alias vim="nvim"
 alias vi="nvim"
 alias cal="cal -m -3"
-alias wttr="curl wttr.in"
+alias wttr="curl wttr.in/Katowice"
 
-alias ls="n"
 alias nnn="n"
 
 alias alacritty="~/.config/scripts/alacritty"

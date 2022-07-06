@@ -2,6 +2,7 @@
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 source ~/.config/scripts/displays
+source ~/.config/scripts/updates
 
 
 #down the last running theme
@@ -11,14 +12,17 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
-# rebind escape
-setxkbmap -option caps:escape
+# rebind escape and set lang to polish
+setxkbmap -option caps:escape pl
 
 #kb speed
 xset r rate 250 40
 
 # Setup video outputs
 switch_displays
+
+check_updates &
+
 
 #boot picom or compton if it exists
 if [ -x "$(command -v picom)" ]; then

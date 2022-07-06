@@ -1,10 +1,17 @@
 #!/bin/sh
-
-if [ -f /var/lib/pacman/db.lck ]; then
+cache_file=/tmp/updates_checked
+function check_updates() {
+  if [ -f /var/lib/pacman/db.lck ]; then
     dunstify -u critical "Could not check updates"
-else
-  updates=$(sudo paru -Sy | paru -Qu | wc -l)
-  if [[ $updates -gt 0 ]]; then
-    dunstify -u low -t 10000 "  Updates available ($updates)"
+  else
+    if [ ! -f "$cache_file" ]; then
+      updates=$(checkupdates | wc -l)
+      if [[ $updates -gt 0 ]]; then
+        dunstify -t 20000 "  Updates available ($updates)"
+      fi
+
+      touch $cache_file
+    fi
   fi
-fi
+}
+

@@ -21,7 +21,7 @@ map("n", "<Leader>gh", [[<cmd>Telescope pickers<cr>]], options)
 
 -- Code actions
 map("n", "<Leader>ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", options)
-map("v", "<Leader>ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", options)
+map("v", "<Leader>ga", "<cmd>lua vim.lsp.buf.range_code_action()<cr>", options)
 
 custom_hover = function()
 	vim.lsp.buf.hover()
@@ -69,4 +69,4 @@ end, {
 })
 
 -- file tree
-map("n", "<Leader>e", "<cmd>NnnPicker<cr>", options)
+map("n", "<Leader>e", "<cmd>NnnPicker %:p:h<cr>", options)
